@@ -51,4 +51,18 @@ def h1(s):
 def h3(s):
     # implement this function
     board, _, _ = s
-    return 0
+    res = 0
+    for i in range(0, 9):
+        q1 = i // 3
+        x1 = i % 3
+        if (board[i] == 0):
+            q2 = 2
+            x2 = 2
+        else:
+            q2 = (board[i]-1) // 3
+            x2 = (board[i]-1) % 3
+        if (abs(q1-q2) != 0):
+            res += 1
+        if (abs(x1-x2) != 0):
+            res += 1
+    return res
